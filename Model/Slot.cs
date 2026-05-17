@@ -12,8 +12,6 @@ namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Model
         public Periodo Periodo { get; set; }
         public TimeOnly Horario { get; set; }
 
-        public Slot(){}
-
         public Slot(DateTime data, Periodo periodo, TimeOnly horario)
         {
             Data = data.Date;

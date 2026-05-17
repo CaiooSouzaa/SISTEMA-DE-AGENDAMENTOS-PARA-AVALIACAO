@@ -14,8 +14,6 @@ namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Model
         public TipoAvaliacao TipoAvaliacao { get; set; }
         public Polo Polo { get; set; }
 
-        public Agendamento(){}
-
         public Agendamento(Aluno aluno, Disciplina disciplina, Slot slot, TipoAvaliacao tipoAvaliacao, Polo polo)
         {
             Aluno = aluno ?? throw new ArgumentNullException(nameof(aluno));

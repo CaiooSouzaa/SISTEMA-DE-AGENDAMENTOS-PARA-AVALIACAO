@@ -24,5 +24,10 @@ namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Repository
             }
             return _listaAgendamento.Find(x => x.Aluno == aluno && x.Slot.Data == data && x.Slot.Periodo == periodo);
         }
+
+        public void Adicionar(Agendamento agendamento)
+        {
+            _listaAgendamento.Add(agendamento);
+        }
     }
 }

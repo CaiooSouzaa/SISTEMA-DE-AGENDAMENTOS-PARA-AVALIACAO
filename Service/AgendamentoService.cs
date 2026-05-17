@@ -52,7 +52,7 @@ namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Service
 
             var todosOsAgendamentos = _agendamentoRepository.listarAgendamentos();
 
-            int quantidadeAgendadosDataEPeriodo = todosOsAgendamentos.Count(x => x.Slot.Data == data.Date && x.Slot.Periodo == periodo);
+            int quantidadeAgendadosDataEPeriodo = todosOsAgendamentos.Count(x => x.Slot.Data.Date == data.Date && x.Slot.Periodo == periodo);
 
             if (quantidadeAgendadosDataEPeriodo >= 20) //se o aluno querer agendar mais 2 provas no mesmo periodo do mesmo dia, não aparece para ele ou mostra a mensagem de erro
             {
@@ -86,6 +86,57 @@ namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Service
                     $"O aluno {aluno.Nome} não pode agendar o Exame desta disciplina. " +
                     "É necessário ter realizado pelo menos uma P1 ou Substitutiva anteriormente.");
             }
+        }
+
+        public void ValidarDataPermitidaParaExame(Aluno aluno, Disciplina disciplina, DateTime dataExame)
+        {
+
+            if (aluno == null) throw new ArgumentNullException(nameof(aluno));
+            if (disciplina == null) throw new ArgumentNullException(nameof(disciplina));
+            if (dataExame == default) throw new ArgumentException("Data do exame é obrigatória.", nameof(dataExame));
+
+
+            var todosOsAgendamentos = _agendamentoRepository.listarAgendamentos();
+
+            var provasAnteriores = todosOsAgendamentos.Where(x =>
+                x.Aluno.Ra == aluno.Ra &&
+                x.Disciplina.CodigoDisciplina == disciplina.CodigoDisciplina &&
+                (x.TipoAvaliacao == TipoAvaliacao.P1 || x.TipoAvaliacao == TipoAvaliacao.SUBSTITUTIVA))
+                .ToList();
+
+            if (!provasAnteriores.Any())
+            {
+                throw new InvalidOperationException(
+                    $"O aluno {aluno.Nome} não possui P1 ou Substitutiva registrada nesta disciplina.");
+            }
+            DateTime dataMaisRecente = provasAnteriores.Max(x => x.Slot.Data);
+
+            if (dataExame.Date <= dataMaisRecente.Date)
+            {
+                throw new InvalidOperationException(
+                    $"Não é possível agendar o Exame para {dataExame:dd/MM/yyyy}. " +
+                    $"A última avaliação (P1/Substitutiva) foi em {dataMaisRecente:dd/MM/yyyy}.");
+            }
+        }
+
+        public void Agendar(Aluno aluno, Disciplina disciplina, DateTime data, Periodo periodo, TipoAvaliacao tipoAvaliacao, Polo polo, TimeOnly horario)
+        {
+            ValidarLimiteDeProvasPorPeriodo(aluno, data, periodo);
+            ValidarCapacidadeDaSala(data, periodo);
+
+            if (tipoAvaliacao == TipoAvaliacao.EXAME)
+            {
+                ValidarElegibilidadeExame(aluno, disciplina, tipoAvaliacao);
+                ValidarDataPermitidaParaExame(aluno, disciplina, data);
+            }
+
+            Slot sl = new Slot(data, periodo, horario);
+
+            Agendamento ag = new Agendamento(aluno, disciplina, sl, tipoAvaliacao, polo);
+
+            _agendamentoRepository.Adicionar(ag);
+
+
         }
 
     }
