@@ -1,0 +1,15 @@
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/bin/Debug/net10.0/AgendamentoAlunos
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/bin/Debug/net10.0/AgendamentoAlunos.deps.json
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/bin/Debug/net10.0/AgendamentoAlunos.runtimeconfig.json
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/bin/Debug/net10.0/AgendamentoAlunos.dll
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/bin/Debug/net10.0/AgendamentoAlunos.pdb
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.GeneratedMSBuildEditorConfig.editorconfig
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.AssemblyInfoInputs.cache
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.AssemblyInfo.cs
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.csproj.CoreCompileInputs.cache
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.sourcelink.json
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.dll
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/refint/AgendamentoAlunos.dll
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.pdb
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/AgendamentoAlunos.genruntimeconfig.cache
+/home/caio/Documentos/PROJESTOS/SISTEMA-DE-AGENDAMENTOS-PARA-AVALIACAO/obj/Debug/net10.0/ref/AgendamentoAlunos.dll

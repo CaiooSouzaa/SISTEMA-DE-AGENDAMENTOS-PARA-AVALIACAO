@@ -1,8 +1,8 @@
 namespace SISTEMA_DE_AGENDAMENTO_CSHARP.Enums
 {
-    public enum Polo : int
+    public enum Polo
     {
-        BAURU = 1,
-        BOTUCATU = 2
+        BAURU,
+        BOTUCATU
     }
 }
